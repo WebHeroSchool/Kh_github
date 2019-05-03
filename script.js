@@ -1,9 +1,8 @@
 const ul = document.querySelector('.container');
-const url = new URL(window.location);
-const username = url.searchParams.get('username');
-console.log(username);
+const username  = 'defunkt';
+const url = `https://api.github.com/users/${username}`;
 
-fetch(`https://api.github.com/users/${username}`)
+fetch(url)
 	.then( res => res.json())
   .then( res => {
     ul.innerHTML =  `
